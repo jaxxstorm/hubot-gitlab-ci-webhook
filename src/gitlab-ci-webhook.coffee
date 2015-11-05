@@ -18,6 +18,7 @@ module.exports = (robot) ->
 
     status = data.build_status
     id = data.build_id
+    project_name = data.build.project_name
     console.log status, id
 
     user = data.push_data.user_name
@@ -26,7 +27,7 @@ module.exports = (robot) ->
     time = Math.round((end - start) / 1000)
 
     if status == 'failed'
-      robot.messageRoom room, "Build ##{id} by #{user} failed in #{time} seconds."
+      robot.messageRoom room, "Build ##{id} by #{user} on #{project_name} failed in #{time} seconds."
     else
-      robot.messageRoom room, "Build ##{id} by #{user} succeeded in #{time} seconds."
+      robot.messageRoom room, "Build ##{id} by #{user} on #{project_name} succeeded in #{time} seconds."
 
