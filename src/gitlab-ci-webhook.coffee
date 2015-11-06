@@ -18,7 +18,7 @@ module.exports = (robot) ->
 
     status = data.build_status
     id = data.build_id
-    project_name = data.build.project_name
+    project_name = data.project_name
     console.log status, id
 
     user = data.push_data.user_name
